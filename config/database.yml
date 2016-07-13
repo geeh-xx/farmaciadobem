@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: farmaciadobem_development
+  username: postgres
+  password: 93176425
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: farmaciadobem_teste
+  username: postgres
+  password: 93176425
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: farmaciadobem_production
+  username: postgres
+  password: 93176425
+  host: localhost

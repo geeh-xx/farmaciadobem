@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Farmacia Do Bem</title>
+
+  <!--materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Farmacia Do Bem</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to 'Home', home_index_path %></li>
+      <li><%= link_to 'Doar Medicamentos', home_index_path %></li>
+      <li><%= link_to 'Medicamentos Disponiveis', home_index_path %></li>
+      <li><%= link_to 'Dicas de Saude', home_index_path %></li>
+      <li><%= link_to 'Equipe', home_index_path %></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">Aqui é Body Builder Ipsum PORRA!
+          É 37 anos caralho! Bora caralho, você quer ver essa porra velho. É
+          13 porra! Boraaa, Hora do Show Porra. Que não vai dá rapaiz, não vai dá
+          essa porra. É esse que a gente quer, é ele que nóis vamo buscar.
+          Sai filho da puta! Sabe o que é isso daí? Trapézio descendente é o
+          nome disso aí. É nóis caraio é trapezera buscando caraio! Ajuda o maluco que tá
+          doente. Eita porra!, tá saindo da jaula o monstro! Eu quero esse 13 daqui a pouquinho aí..<br />
+          <a class="grey-text text-lighten-3" href="http://www.bodybuilderipsum.com.br">Fonte:Body Builder Ipsum</a>
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2016 Farmacia Do Bem Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- materialize -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+</body>
+</html>

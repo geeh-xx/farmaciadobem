@@ -1,0 +1,39 @@
+<h1>Doar Medicamentos</h1>
+
+<%= form_for :medicamento, url: medicamentos_path do |f| %>
+
+    <% if not @medicamento.nil? and @medicamento.errors.any? %>
+        <div id="error_explanation">
+          <h2 style="color:red;">
+            Para que essa noticia seja salva</h2>
+          <ul>
+            <% @medicamento.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :Nome %><br>
+      <%= f.text_field :nome %>
+    </p>
+
+    <p>
+      <%= f.label :Tipo %><br>
+      <%= f.text_field :tipo %>
+    </p>
+
+    <p>
+      <%= f.label :Validade %><br>
+      <%= f.text_field :validade %>
+    </p>
+
+    <p>
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        <%= f.submit :"Salvar"%>
+      </button>
+    </p>
+    <br />
+<% end %>
+

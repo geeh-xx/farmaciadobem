@@ -2,10 +2,10 @@ class MedicamentosController < ApplicationController
 
   def index
 
-    if params[:search]
+    if params[:search].nil?
       @medicamentos = Medicamento.all.reverse_order
     else
-      @medicamentos = Medicamento.where(medicamento: params[:search])
+      @medicamentos = Medicamento.where(nome: params[:search])
     end
 
   end
@@ -37,9 +37,12 @@ class MedicamentosController < ApplicationController
   end
 
   def create
-    @medicamento = Medicamento.new user_params
+    @medicamento = Medicamento.new medicamento_params
     if @medicamento.save
-      redirect_to @medicamento
+      flash[:notice] = "Informações salvas com sucesso."
+      respond_to do |format|
+        format.html { redirect_to action: 'index', notice: 'Medicamento salvo com sucesso.' }
+      end
     else
       render 'new'
     end
@@ -47,7 +50,7 @@ class MedicamentosController < ApplicationController
 
   private
   def medicamento_params
-    params.require(:medicamento).permit :medicamento, :name, :email, :tel, :picture
+    params.require(:medicamento).permit :nome, :tipo, :validade
   end
 
 end

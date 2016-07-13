@@ -17,11 +17,13 @@
 <nav>
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Farmacia Do Bem</a>
-    <% if user_signed_in? %>
-        <%= render partial: "home/logado" %>
-    <% else %>
-        <%= render partial: "home/deslogado" %>
-  <% end %>
+    <ul>
+      <% if user_signed_in? %>
+          <%= render partial: "home/logado" %>
+      <% else %>
+          <%= render partial: "home/deslogado" %>
+      <% end %>
+    </ul>
   </div>
 </nav>
 

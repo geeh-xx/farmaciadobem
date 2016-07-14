@@ -1,0 +1,42 @@
+<h1>Perfil</h1>
+<br/>
+<div class="row">
+  <div class="col l9">
+    <%= form_for :perfil, url: perfis_path do |f| %>
+
+        <% if not @perfil.nil? and @perfil.errors.any? %>
+            <div id="error_explanation">
+              <h2 style="color:red;">
+                Para que essa noticia seja salva</h2>
+              <ul>
+                <% @perfil.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <p>
+          <%= f.label :Nome %><br>
+          <%= f.text_field :nome %>
+        </p>
+
+        <p>
+          <%= f.label :Email %><br>
+          <%= f.text_field :email, value:current_user.email %>
+        </p>
+
+        <p>
+          <%= f.label :Telefone %><br>
+          <%= f.text_field :telefone %>
+        </p>
+
+        <p>
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <%= f.submit :"Salvar"%>
+          </button>
+        </p>
+        <br />
+    <% end %>
+  </div>
+</div>

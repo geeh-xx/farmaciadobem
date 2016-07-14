@@ -23,7 +23,11 @@
 
         <p>
           <%= f.label :Email %><br>
-          <%= f.text_field :email, value:current_user.email %>
+          <% if current_user.perfil.email.nil? || current_user.perfil.email.empty? %>
+            <%= f.text_field :email, value:current_user.email %>
+          <% else %>
+            <%= f.text_field :email%>
+        <% end %>
         </p>
 
         <p>

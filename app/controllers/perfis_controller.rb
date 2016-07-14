@@ -24,7 +24,7 @@ class PerfisController < ApplicationController
     if @perfil.save
       flash[:notice] = "Informações salvas com sucesso."
       respond_to do |format|
-        format.html { redirect_to action: 'edit', notice: 'Informações salvas com sucesso.' }
+        format.html { redirect_to edit_perfi_path(@perfil), notice: 'Informações salvas com sucesso.' }
       @user.perfil = @perfil
       @user.save
       end

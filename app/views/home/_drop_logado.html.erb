@@ -1,4 +1,8 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><%=  link_to 'Editar', edit_perfi_path(current_user.perfil) %></li>
+  <% if !current_user.perfil.nil? %>
+    <li><%=  link_to 'Editar', edit_perfi_path(current_user.perfil) %></li>
+  <% else %>
+    <li><%=  link_to 'Editar', new_perfi_path %></li>
+  <% end %>
   <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
 </ul>

@@ -4,6 +4,7 @@ class MedicamentosController < ApplicationController
   def index
     @q = Medicamento.ransack(params[:q])
     @medicamentos = @q.result
+    @medicamentos
 
     # if params[:search].nil?
     #   @medicamentos = Medicamento.all.reverse_order

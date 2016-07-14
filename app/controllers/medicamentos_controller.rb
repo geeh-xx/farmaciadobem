@@ -2,13 +2,14 @@ class MedicamentosController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    @q = Medicamento.ransack(params[:q])
+    @medicamentos = @q.result
 
-    if params[:search].nil?
-      @medicamentos = Medicamento.all.reverse_order
-    else
-      @medicamentos = Medicamento.where(nome: params[:search])
-    end
-
+    # if params[:search].nil?
+    #   @medicamentos = Medicamento.all.reverse_order
+    # else
+    #   @medicamentos = Medicamento.where(nome: params[:search])
+    # end
   end
 
   def show

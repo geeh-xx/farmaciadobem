@@ -1,0 +1,14 @@
+<p>
+  <strong>Depoimento:</strong>
+  <%= @depoimento.depoimento %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @depoimento.user.perfil.nome %>
+</p>
+
+<% if current_user.id ==  @depoimento.user.id %>
+    <%= link_to 'Editar', edit_depoimento_path(@depoimento) %> |
+<% end %>
+<%= link_to 'Voltar', depoimentos_path %>

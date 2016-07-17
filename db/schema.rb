@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714184603) do
+ActiveRecord::Schema.define(version: 20160717000310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text     "comentario"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comentarios", ["user_id"], name: "index_comentarios_on_user_id", using: :btree
+
+  create_table "depoimentos", force: :cascade do |t|
+    t.text     "depoimento"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "depoimentos", ["user_id"], name: "index_depoimentos_on_user_id", using: :btree
 
   create_table "medicamentos", force: :cascade do |t|
     t.string   "nome"
@@ -53,5 +71,7 @@ ActiveRecord::Schema.define(version: 20160714184603) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comentarios", "users"
+  add_foreign_key "depoimentos", "users"
   add_foreign_key "perfils", "users"
 end

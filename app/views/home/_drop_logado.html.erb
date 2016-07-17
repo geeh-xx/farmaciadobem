@@ -1,6 +1,7 @@
 <ul id="dropdown1" class="dropdown-content">
   <% if !current_user.perfil.nil? %>
     <li><%=  link_to 'Editar', edit_perfi_path(current_user.perfil) %></li>
+    <li><%=  link_to 'Depoimentos ', depoimentos_path %></li>
   <% else %>
     <li><%=  link_to 'Editar', new_perfi_path %></li>
   <% end %>

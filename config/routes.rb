@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :depoimentos
   devise_for :users, controllers: { registrations: "registrations" }
   get 'home/index'
   root 'home#index'

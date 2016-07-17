@@ -4,7 +4,6 @@ class MedicamentosController < ApplicationController
   def index
     @q = Medicamento.ransack(params[:q])
     @medicamentos = @q.result
-    @medicamentos
 
     # if params[:search].nil?
     #   @medicamentos = Medicamento.all.reverse_order
@@ -37,9 +36,11 @@ class MedicamentosController < ApplicationController
   end
 
   def new
+    @depoimentos = Depoimento.all
   end
 
   def create
+    @depoimentos = Depoimento.all
     @medicamento = Medicamento.new medicamento_params
     if @medicamento.save
       flash[:notice] = "Informações salvas com sucesso."

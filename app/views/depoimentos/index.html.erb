@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Depoimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Depoimento</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @depoimentos.each do |depoimento| %>
+      <thead>
+        <tr>
+          <td><%= depoimento.depoimento %></td>
+          <td><%= depoimento.user.perfil.nome %></td>
+          <td><%= link_to 'Ver', depoimento %></td>
+          <td><%= link_to 'Editar', edit_depoimento_path(depoimento) %></td>
+          <!--<td><%= link_to 'Destroy', depoimento, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        </tr>
+      </thead>
+    <% end %>
+
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Depoimento', new_depoimento_path %>

@@ -1,0 +1,23 @@
+<%= form_for(@depoimento) do |f| %>
+  <% if @depoimento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@depoimento.errors.count, "error") %> Para salver esse depoimento:</h2>
+
+      <ul>
+      <% @depoimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :depoimento %><br>
+    <%= f.text_area :depoimento %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">
+     <%= f.submit :"Salvar"%>
+  </button>
+  <br />  <br />
+<% end %>

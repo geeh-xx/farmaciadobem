@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717000310) do
+ActiveRecord::Schema.define(version: 20160720140102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "comentarios", force: :cascade do |t|
-    t.text     "comentario"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comentarios", ["user_id"], name: "index_comentarios_on_user_id", using: :btree
 
   create_table "depoimentos", force: :cascade do |t|
     t.text     "depoimento"
@@ -33,6 +24,21 @@ ActiveRecord::Schema.define(version: 20160717000310) do
   end
 
   add_index "depoimentos", ["user_id"], name: "index_depoimentos_on_user_id", using: :btree
+
+  create_table "enderecos", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "rua"
+    t.string   "numero"
+    t.string   "bairro"
+    t.string   "cidade"
+    t.string   "estado"
+    t.string   "cep"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "enderecos", ["user_id"], name: "index_enderecos_on_user_id", using: :btree
 
   create_table "medicamentos", force: :cascade do |t|
     t.string   "nome"
@@ -71,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160717000310) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "comentarios", "users"
   add_foreign_key "depoimentos", "users"
+  add_foreign_key "enderecos", "users"
   add_foreign_key "perfils", "users"
 end

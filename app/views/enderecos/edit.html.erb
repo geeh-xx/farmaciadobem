@@ -1,0 +1,8 @@
+<h1>Editar Endereco</h1>
+
+<%= render 'form' %>
+
+<% if !current_user.perfil.nil? || !current_user.perfil.blank? %>
+    <%= link_to 'Voltar', edit_perfi_path(current_user.perfil) %>
+<% end %>
+

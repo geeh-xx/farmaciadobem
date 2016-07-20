@@ -1,0 +1,41 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @endereco.nome %>
+</p>
+
+<p>
+  <strong>Rua:</strong>
+  <%= @endereco.rua %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @endereco.numero %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @endereco.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @endereco.cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @endereco.estado %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @endereco.cep %>
+</p>
+
+
+<%= link_to 'Editar', edit_endereco_path(@endereco) %>
+<% if !current_user.perfil.nil? || !current_user.perfil.blank? %>
+    <%= link_to 'Voltar', edit_perfi_path(current_user.perfil) %>
+<% end %>
+

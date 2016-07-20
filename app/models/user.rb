@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   has_one :perfil
   has_many :depoimentos
+  has_many :enderecos
 
 end

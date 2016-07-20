@@ -4,6 +4,7 @@ class PerfisController < ApplicationController
 
   def edit
     @perfil = Perfil.find params[:id]
+    @enderecos = @user.enderecos.all.reverse_order
   end
 
   def update
@@ -16,6 +17,7 @@ class PerfisController < ApplicationController
   end
 
   def new
+    @enderecos = @user.enderecos.all.reverse_order
   end
 
   def create

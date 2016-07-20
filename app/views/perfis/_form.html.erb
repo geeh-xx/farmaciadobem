@@ -27,7 +27,7 @@
             <%= f.text_field :email, value:current_user.email %>
           <% else %>
             <%= f.text_field :email%>
-        <% end %>
+          <% end %>
         </p>
 
         <p>
@@ -42,5 +42,17 @@
         </p>
         <br />
     <% end %>
+    <br />
+    <h3>Endereços</h3>
+    <% if current_user.enderecos.blank? %>
+        <%= link_to 'Você não Possui Nenhum Endereço cadastrado, cadastre um', new_endereco_path %>
+    <% else %>
+        <% @enderecos.each do |endereco| %>
+            <div class="collection">
+              <%= link_to endereco.nome, endereco, class: "collection-item" %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= link_to 'Novo Endereço', new_endereco_path %>
   </div>
 </div>

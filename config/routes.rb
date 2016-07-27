@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :doacaos
   resources :enderecos
   resources :depoimentos
   devise_for :users, controllers: { registrations: "registrations" }

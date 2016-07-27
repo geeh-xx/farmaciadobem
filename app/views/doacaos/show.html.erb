@@ -1,0 +1,31 @@
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @doacao.tipo %>
+</p>
+
+<p>
+  <strong>Local da Doação:</strong>
+  <%= @doacao.local_doacao %>
+</p>
+
+<p>
+  <strong>Data da Doação:</strong>
+  <%= @doacao.data_doacao %>
+</p>
+
+<p>
+  <strong>Horario da Doação:</strong>
+  <%= @doacao.horario_doacao %>
+</p>
+<br />
+<h3>Medicamentos Doados</h3>
+<% @medicamentos.each do |medicamento| %>
+    <ul class="collection">
+      <li class="collection-item">
+        <b>Medicamento</b>: <%= medicamento.nome %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Tipo</b>: <%= medicamento.tipo %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Validade</b>: <%= medicamento.validade %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </li>
+    </ul>
+<% end %>

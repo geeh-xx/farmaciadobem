@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  local_doacao: MyString
+  data_doacao: MyString
+  horario_doacao: MyString
+  user_id: 
+
+two:
+  tipo: MyString
+  local_doacao: MyString
+  data_doacao: MyString
+  horario_doacao: MyString
+  user_id: 

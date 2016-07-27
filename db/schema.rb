@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720140102) do
+ActiveRecord::Schema.define(version: 20160726141027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20160720140102) do
   end
 
   add_index "depoimentos", ["user_id"], name: "index_depoimentos_on_user_id", using: :btree
+
+  create_table "doacaos", force: :cascade do |t|
+    t.string   "tipo"
+    t.string   "local_doacao"
+    t.string   "data_doacao"
+    t.string   "horario_doacao"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "doacaos", ["user_id"], name: "index_doacaos_on_user_id", using: :btree
 
   create_table "enderecos", force: :cascade do |t|
     t.string   "nome"
@@ -46,7 +58,10 @@ ActiveRecord::Schema.define(version: 20160720140102) do
     t.string   "validade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "doacao_id"
   end
+
+  add_index "medicamentos", ["doacao_id"], name: "index_medicamentos_on_doacao_id", using: :btree
 
   create_table "perfils", force: :cascade do |t|
     t.string   "nome"
@@ -78,6 +93,8 @@ ActiveRecord::Schema.define(version: 20160720140102) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "depoimentos", "users"
+  add_foreign_key "doacaos", "users"
   add_foreign_key "enderecos", "users"
+  add_foreign_key "medicamentos", "doacaos"
   add_foreign_key "perfils", "users"
 end

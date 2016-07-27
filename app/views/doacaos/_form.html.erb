@@ -1,0 +1,75 @@
+<%= form_for(@doacao) do |f| %>
+  <% if @doacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doacao.errors.count, "error") %> prohibited this doacao from being saved:</h2>
+
+      <ul>
+      <% @doacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col l9">
+      <div class="col s12">
+        <div class="row">
+          <h3> Doação</h3>
+          <div class="input-field col s12">
+            <%= f.label :tipo %>
+            <%= f.text_field :tipo %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :local_doacao %>
+            <%= f.text_field :local_doacao %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <%= f.label :data_doacao %>
+            <%= f.text_field :data_doacao %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :horario_doacao %>
+            <%= f.text_field :horario_doacao %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+          </div>
+        </div>
+        <%= f.fields_for :medicamentos do |medicamento| %>
+            <%= render "medicamento_fields", :f => medicamento %>
+        <% end %>
+        <%= link_to_add_association 'Adicionar Medicamento', f, :medicamentos %>
+
+        <br /><br />
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          <%= f.submit :"Salvar"%>
+        </button>
+      </div>
+    </div>
+<% end %>
+    <div class="col l3">
+      <div id="aside">
+        <h5>Gostou da experiência de doar um medicamento? Quer nos falar sobre isso? A população quer saber!</h5>
+        <h3>Depoimentos</h3>
+        <div class="divider"></div>
+        <div class="card">
+          <% @depoimentos.each do |depoimento| %>
+              <div class="card-image">
+                <img src="//placehold.it/800x450/FF9800/EE00BB">
+                <span class="card-title"><%= depoimento.user.perfil.nome %></span>
+              </div>
+              <div class="card-content">
+                <%= depoimento.depoimento %>
+              </div>
+              <div class="card-action">
+                <%= link_to 'Ver', depoimento %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,5 +1,6 @@
 class MedicamentosController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :set_medicamento, only: [:show, :edit, :update]
 
   def index
     @q = Medicamento.ransack(params[:q])
@@ -13,16 +14,13 @@ class MedicamentosController < ApplicationController
   end
 
   def show
-    @medicamento = Medicamento.find params[:id]
   end
 
   def edit
-    @medicamento = Medicamento.find params[:id]
   end
 
   def update
-    @medicamento = Medicamento.find params[:id]
-    if @medicamento.update_attributes(medicamento_params)
+    if @medicamento.update(medicamento_params)
       redirect_to @medicamento
     else
       render 'edit'
@@ -37,6 +35,7 @@ class MedicamentosController < ApplicationController
 
   def new
     @depoimentos = Depoimento.all
+    @medicamento = Medicamento.new
   end
 
   def create
@@ -52,9 +51,13 @@ class MedicamentosController < ApplicationController
     end
   end
 
+  def set_medicamento
+    @medicamento = Medicamento.find(params[:id])
+  end
+
   private
   def medicamento_params
-    params.require(:medicamento).permit :nome, :tipo, :validade
+    params.require(:medicamento).permit :nome, :tipo, :validade, :doacao_id
   end
 
 end

@@ -24,17 +24,17 @@
         <div class="row">
           <div class="input-field col s12">
             <%= f.label :"Como deseja doar?" %><br /><br />
-            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.id]},{include_blank: 'Escolha um endereço'} %>
+            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.id]},{include_blank: 'Escolha um endereço'}, class:"browser-default" %>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <%= f.label :data_doacao %>
-            <%= f.text_field :data_doacao %>
+            <%= f.text_field :data_doacao, id: "datadoacao" %>
           </div>
           <div class="input-field col s6">
             <%= f.label :horario_doacao %>
-            <%= f.text_field :horario_doacao %>
+            <%= f.text_field :horario_doacao, id: "horadoacao" %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
           </div>
         </div>

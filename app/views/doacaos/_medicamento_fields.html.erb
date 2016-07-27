@@ -14,7 +14,8 @@
   </p>
   <p>
     <%= f.label :Validade %><br>
-    <%= f.text_field :validade %>
+    <%= f.text_field :validade, id: "validaderemedio" %>
   </p>
+  <%= javascript_include_tag 'application', 'maskedinput'%>
   <%= link_to_remove_association "remover medicamento", f %>
 </div>

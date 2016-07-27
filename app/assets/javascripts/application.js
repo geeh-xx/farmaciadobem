@@ -15,6 +15,14 @@
 //= require turbolinks
 //= require_tree .
 //= require cocoon
+//= require maskedinput
+
+jQuery(function($){
+    $("#datadoacao").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+    $("#horadoacao").mask("99:99",{placeholder:"hh:mm"});
+    $("#validaderemedio").mask("99/9999",{placeholder:"mm/yyyy"});
+});
+
 
 $(document).ready(function() {
     $('select').material_select();

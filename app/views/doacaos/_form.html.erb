@@ -23,8 +23,8 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <%= f.label :local_doacao %>
-            <%= f.text_field :local_doacao %>
+            <%= f.label :"Como deseja doar?" %><br /><br />
+            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.id]},{include_blank: 'Escolha um endereço'} %>
           </div>
         </div>
         <div class="row">

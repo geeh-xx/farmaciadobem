@@ -19,6 +19,7 @@ class DoacaosController < ApplicationController
   def new
     @doacao = Doacao.new
     @depoimentos = Depoimento.all
+    @enderecos = @user.enderecos.all.reverse_order
   end
 
   # GET /doacaos/1/edit

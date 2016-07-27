@@ -1,12 +1,16 @@
 <div class="nested-fields">
     <h3>Medicamento</h3>
   <p>
-    <%= f.label :Nome %><br>
+    <%= f.label :"Nome Medicamento" %><br>
     <%= f.text_field :nome %>
   </p>
   <p>
-    <%= f.label :Tipo %><br>
-    <%= f.text_field :tipo %>
+    <%= f.label :"Tipo de Medicamento" %><br><br>
+    <%= f.select(:tipo ,[["Comprimidos/Drágeas/Pílulas"],
+                         ["Líquidos(solução e gotas)/Apenas fechados"],
+                         ["Pomadas e Cremes(fechados)"],
+                         ["Meu medicamento está vencido. Quero descarta-lo."]],
+                 {include_blank: 'Escolha um'}, class:"browser-default") %>
   </p>
   <p>
     <%= f.label :Validade %><br>

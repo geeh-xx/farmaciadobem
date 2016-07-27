@@ -15,19 +15,21 @@
     <div class="col l9">
       <div class="col s12">
         <div class="row">
-          <h3> Doação</h3>
-          <div class="input-field col s12">
-            <%= f.label :tipo %>
-            <%= f.text_field :tipo %>
-          </div>
-        </div>
-        <div class="row">
           <div class="input-field col s12">
             <%= f.label :"Como deseja doar?" %><br /><br />
-            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.nome]},{include_blank: 'Escolha um endereço'}%>
+            <%= f.select(:tipo ,[["Levar ao ponto de coleta"],
+                                 ["Motoqueiro busque para mim"]],
+                         {include_blank: 'Escolha'}, id: "localdoacao") %>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="local_doacao">
+          <div class="input-field col s12">
+            <%= f.label :"Endereço da coleta" %><br /><br />
+            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.nome]},{include_blank: 'Escolha um endereço'} %>
+          </div>
+        </div>
+        <div class="row" id="horio_doacao">
+          <h5> Horario para a coleta</h5>
           <div class="input-field col s6">
             <%= f.label :data_doacao %>
             <%= f.text_field :data_doacao, id: "datadoacao" %>
@@ -73,3 +75,29 @@
     </div>
   </div>
 
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+
+    $("#horio_doacao").css("display", "none");
+    $("#local_doacao").css("display", "none");
+
+    $("#localdoacao").on('change', function(e){
+      if ($(this).val() == "Motoqueiro busque para mim") {
+        $("#horio_doacao").css("display", "block");
+        $("#local_doacao").css("display", "block");
+
+      }else{
+        $("#horio_doacao").css("display", "none");
+        $("#local_doacao").css("display", "none");
+      }
+      return false;
+    });
+  });
+
+  jQuery(function($){
+    $("#datadoacao").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+    $("#horadoacao").mask("99:99",{placeholder:"hh:mm"});
+  });
+
+</script>

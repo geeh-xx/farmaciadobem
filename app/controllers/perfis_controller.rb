@@ -5,9 +5,6 @@ class PerfisController < ApplicationController
   def edit
     @perfil = Perfil.find params[:id]
     @enderecos = @user.enderecos.all.reverse_order
-    if @user.enderecos.find_by(nome: "Ponto de coleta").nil?
-      cadastra_enderecos_padroes
-    end
   end
 
   def update
@@ -45,11 +42,6 @@ class PerfisController < ApplicationController
 
     def carrega_usuario
       @user = User.find(current_user.id)
-    end
-
-    def cadastra_enderecos_padroes
-      @endereco = Endereco.new(nome: "Ponto de coleta", user_id: current_user.id)
-      @endereco.save
     end
 
 end

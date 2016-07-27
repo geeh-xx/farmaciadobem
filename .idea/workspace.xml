@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91187db9-0aa8-4dba-92c5-f151381076ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/doacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/doacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/perfis_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/perfis_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/doacaos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doacaos/_medicamento_fields.html.erb" afterPath="$PROJECT_DIR$/app/views/doacaos/_medicamento_fields.html.erb" />
-    </list>
+    <list default="true" id="91187db9-0aa8-4dba-92c5-f151381076ee" name="Default" comment="" />
     <ignored path="farmaciadobem.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -756,12 +749,12 @@
       <workItem from="1469540309434" duration="3702000" />
       <workItem from="1469577214509" duration="4025000" />
       <workItem from="1469581663040" duration="363000" />
-      <workItem from="1469643944660" duration="1116000" />
+      <workItem from="1469643944660" duration="1177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60304000" />
+    <option name="totallyTimeSpent" value="60365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />

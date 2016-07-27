@@ -24,7 +24,7 @@
         <div class="row">
           <div class="input-field col s12">
             <%= f.label :"Como deseja doar?" %><br /><br />
-            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.id]},{include_blank: 'Escolha um endereço'}, class:"browser-default" %>
+            <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.nome]},{include_blank: 'Escolha um endereço'}%>
           </div>
         </div>
         <div class="row">

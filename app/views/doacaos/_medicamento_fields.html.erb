@@ -14,8 +14,7 @@
   </p>
   <p>
     <%= f.label :Validade %><br>
-    <%= f.text_field :validade, id: "validaderemedio" %>
+    <%= f.text_field :validade, value: "dd/yyyy"%>
   </p>
-  <%= javascript_include_tag 'application', 'maskedinput'%>
   <%= link_to_remove_association "remover medicamento", f %>
 </div>

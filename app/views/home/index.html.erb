@@ -22,7 +22,7 @@
     </div>
     <div class="col s2 offset-s1 center-align white-text" style="width:300px; height:110px; background-color:#ef9a9a;border-radius: 10px;opacity: 0.5;filter: alpha(opacity=50);">
       DICAS DE SAÚDE <br />
-      Dicas de Saúde atualizadas constantemente.
+      Dicas de Saúde atualizadas constantemente.<br/>
       Saiba Mais...
     </div>
   </div>
@@ -41,3 +41,54 @@
   </div>
 </div>
 
+<div class=responsive-img" style="background-image:url(/assets/remedios.png);width: 100%;height: 760px;">
+  <br />
+  <h4 class="header center white-text">Ultimos Medicamentos Cadastrados</h4>
+  <div class="row  center-align" >
+    <% @medicamentos.each do |medicamento| %>
+      <div class="col s3" style="background-color:white;">
+        <%= image_tag("medicamento.png") %><br/>
+        <%= medicamento.nome %> <br />
+        <button class="btn btn-flat orange waves-effect waves-light white-text">Solicitar</button>
+      </div>
+    <% end -%>
+  </div>
+  <br />
+  <h4 class="header center black-text">Medicamentos Disponíveis</h4><br />
+  <%= search_form_for @q do |f| %>
+      <center>
+        <%= f.search_field :nome_cont ,style: "width: 50%;"%>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          <%= f.submit :"Buscar" %>
+        </button>
+      </center>
+  <% end %>
+  <div class="row  center-align">
+      <h5>OQUE POSSO DOAR:</h5><br />
+
+  </div>
+</div>
+<div class="row section no-pad-bot card-panel teal lighten-2 white-text">
+  <div class="col l9">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <h5>COMO DOAR:</h5> <br />
+          1)Entregar em algum ponto de coleta da cidade; <br/>
+          2)Utilizar nosso serviço Reverse Delivery(Entrega ao Contrário); <br />
+          3)Enviar um whatsapp para o número solicitando nosso motoboy.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <h5> Horario </h5>
+          hahaha
+        </div>
+        <div class="col s6 ">
+          <h5> Horario </h5>
+            hahah
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

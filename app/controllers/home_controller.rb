@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
   def index
-    @medicamentos = Medicamento.last(5).reverse
+    @q = Medicamento.ransack(params[:q])
+    if !@q.nil?
+      @medicamentos = Medicamento.last(4).reverse
+    else
+      @medicamentos = @q.result
+    end
+
   end
 end

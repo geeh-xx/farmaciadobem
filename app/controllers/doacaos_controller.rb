@@ -34,7 +34,7 @@ class DoacaosController < ApplicationController
 
     respond_to do |format|
       if @doacao.save
-        format.html { redirect_to @doacao, notice: 'Doacao was successfully created.' }
+        format.html { redirect_to @doacao, notice: 'Doacão Feit com sucesso.' }
         format.json { render :show, status: :created, location: @doacao }
       else
         format.html { render :new }

@@ -100,7 +100,8 @@
     <br/><br/>
     <% @depoimentos.each do |depoimento| %>
         <div class="col s3 offset-s2 black-text center-align"  style="background-color:white;border:black solid 1px;height: 180px;opacity: 0.5;filter: alpha(opacity=50);">
-          <%= depoimento.depoimento %><br />
+          <br/>
+          <%= depoimento.depoimento %><br /><br />
           <%= depoimento.user.perfil.nome %>
         </div>
     <% end -%>

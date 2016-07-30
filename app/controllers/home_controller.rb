@@ -6,6 +6,6 @@ class HomeController < ApplicationController
     else
       @medicamentos = @q.result
     end
-
+    @depoimentos = Depoimento.last(3).reverse
   end
 end

@@ -41,13 +41,13 @@
   </div>
 </div>
 
-<div class=responsive-img" style="background-image:url(/assets/remedios.png);width: 100%;height: 760px;">
+<div class=responsive-img" style="background-image:url(/assets/remedios.png);width: 100%;height: 860px;">
   <br />
   <h4 class="header center white-text">Ultimos Medicamentos Cadastrados</h4>
   <div class="row  center-align" >
     <% @medicamentos.each do |medicamento| %>
       <div class="col s3">
-        <%= image_tag("medicamento.png") %><br/>
+        <%= image_tag(("medicamento.png"), class: "responsive-img") %><br/>
         <%= medicamento.nome %> <br />
         <button class="btn btn-flat orange waves-effect waves-light white-text">Solicitar</button>
       </div>
@@ -63,8 +63,18 @@
         </button>
       </center>
   <% end %>
-  <div class="row  center-align">
-      <h5>OQUE POSSO DOAR:</h5><br />
+  <div class="row " style="padding-left: 280px";>
+
+        <h5>OQUE POSSO DOAR:</h5><br />
+        1)Medicamentos que não estejam vencidos (Data de validade legível) abertos ou fechados;<br />
+        2)Frascos com líquidos ou soluções (Somente fechados e com lacre);<br />
+        3)Fraldas descartáveis abertas ou fechadas;<br />
+        4)Escovas dentais fechadas;<br />
+        5)Pastas dentais fechadas que não estejam vencidas;<br />
+        6)Fio dental fechado;<br />
+        7)Pastas dentais infantis <b>SEM FLÚOR</b> que não estejam vencidas;<br />
+        8)Termômetros;<br />
+        9)Aparelhos de dosagem de glicose;<br />
 
   </div>
 </div>
@@ -112,5 +122,7 @@
   <input id="search" type="search" style= "width: 50%;">
   <button class="btn waves-effect waves-light" type="submit" name="action">
     Buscar
-  </button>
+  </button><br><br/>
+  <%= image_tag(("tudojunto.png"), class: "responsive-img") %>
 </div>
+<%= image_tag(("campanha.png"), class: "responsive-img" ) %>

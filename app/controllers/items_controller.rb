@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :carrega_usuario
   include CurrentCart
-  before_action :carrega_usuario
   before_action :set_cart, only: [:create]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /items
   # GET /items.json
@@ -77,7 +76,4 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:medicamento_id, :carrinho_id)
     end
 
-    def carrega_usuario
-      @user = User.find(current_user.id)
-    end
 end

@@ -49,8 +49,7 @@
       <div class="col s3">
         <%= image_tag(("medicamento.png"), class: "responsive-img") %><br/>
         <%= medicamento.nome %> <br />
-        <button class="btn btn-flat red darken-2 waves-effect waves-light white-text">Solicitar</button>
-        <%= button_to 'Add to Cart', items_path(:medicamento_id => medicamento) %>
+        <%= button_to 'Solicitar', items_path(:medicamento_id => medicamento), class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %>
       </div>
     <% end -%>
   </div>

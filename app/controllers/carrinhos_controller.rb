@@ -1,6 +1,6 @@
 class CarrinhosController < ApplicationController
-  before_action :carrega_usuario
   before_action :set_carrinho, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /carrinhos
   # GET /carrinhos.json

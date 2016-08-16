@@ -1,0 +1,10 @@
+
+<p>
+<span> Solicitações</span><br />
+<% @carrinho.items.each do |item| %>
+  <%= item.medicamento.nome %><br/>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_carrinho_path(@carrinho) %> |
+<%= link_to 'Back', carrinhos_path %>

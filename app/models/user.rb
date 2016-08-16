@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   has_many :depoimentos
   has_many :enderecos
   has_many :doacaos
+  has_many :carrinhos
 
 end

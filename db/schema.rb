@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726141027) do
+ActiveRecord::Schema.define(version: 20160816163951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carrinhos", force: :cascade do |t|
+    t.date     "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "carrinhos", ["user_id"], name: "index_carrinhos_on_user_id", using: :btree
 
   create_table "depoimentos", force: :cascade do |t|
     t.text     "depoimento"
@@ -52,6 +61,16 @@ ActiveRecord::Schema.define(version: 20160726141027) do
 
   add_index "enderecos", ["user_id"], name: "index_enderecos_on_user_id", using: :btree
 
+  create_table "items", force: :cascade do |t|
+    t.integer  "medicamento_id"
+    t.integer  "carrinho_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "items", ["carrinho_id"], name: "index_items_on_carrinho_id", using: :btree
+  add_index "items", ["medicamento_id"], name: "index_items_on_medicamento_id", using: :btree
+
   create_table "medicamentos", force: :cascade do |t|
     t.string   "nome"
     t.string   "tipo"
@@ -74,6 +93,35 @@ ActiveRecord::Schema.define(version: 20160726141027) do
 
   add_index "perfils", ["user_id"], name: "index_perfils_on_user_id", using: :btree
 
+  create_table "shopping_cart_items", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "quantity"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer  "solicitacao_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "shopping_carts", ["solicitacao_id"], name: "index_shopping_carts_on_solicitacao_id", using: :btree
+
+  create_table "solicitacaos", force: :cascade do |t|
+    t.date     "data"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "solicitacaos", ["user_id"], name: "index_solicitacaos_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -92,9 +140,14 @@ ActiveRecord::Schema.define(version: 20160726141027) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "carrinhos", "users"
   add_foreign_key "depoimentos", "users"
   add_foreign_key "doacaos", "users"
   add_foreign_key "enderecos", "users"
+  add_foreign_key "items", "carrinhos"
+  add_foreign_key "items", "medicamentos"
   add_foreign_key "medicamentos", "doacaos"
   add_foreign_key "perfils", "users"
+  add_foreign_key "shopping_carts", "solicitacaos"
+  add_foreign_key "solicitacaos", "users"
 end

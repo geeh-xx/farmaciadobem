@@ -30,7 +30,7 @@
            Validade: <%= medicamento.validade %>
           </p>
         <br /><br />
-        <button class="btn btn-flat orange waves-effect waves-light white-text">Solicitar</button>
+          <%= link_to 'Solicitar', new_item_path(medicamento_id: medicamento.id) %>
         </div>
         <div class="col l3">
           <br />

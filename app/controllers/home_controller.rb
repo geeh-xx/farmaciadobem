@@ -7,5 +7,6 @@ class HomeController < ApplicationController
       @medicamentos = @q.result
     end
     @depoimentos = Depoimento.last(2).reverse
+    @item = Item.new
   end
 end

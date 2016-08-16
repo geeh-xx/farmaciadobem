@@ -73,7 +73,6 @@ class DepoimentosController < ApplicationController
       params.require(:depoimento).permit(:depoimento, :user_id)
     end
 
-  private
     def carrega_usuario
       @user = User.find(current_user.id)
     end

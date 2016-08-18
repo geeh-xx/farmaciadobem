@@ -1,6 +1,6 @@
 class Medicamento < ActiveRecord::Base
   belongs_to :doacao
-  has_many :items
+  has_many :items, dependent: :destroy
 
   before_destroy :ensure_not_referenced_by_any_item
 

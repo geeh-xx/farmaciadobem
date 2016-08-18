@@ -2,12 +2,12 @@ class CarrinhosController < ApplicationController
   before_action :authenticate_user!
   include CurrentCart
   before_action :set_carrinho, only: [:show,:edit, :update, :destroy]
-
+  before_action :carrega_usuario
 
   # GET /carrinhos
   # GET /carrinhos.json
   def index
-    @carrinhos = Carrinho.all
+    @carrinhos = @user.carrinhos.all.reverse_order
   end
 
   # GET /carrinhos/1
@@ -80,5 +80,9 @@ class CarrinhosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def carrinho_params
       params.require(:carrinho).permit(:data,:user_id)
+    end
+
+    def carrega_usuario
+      @user = User.find(current_user.id)
     end
 end

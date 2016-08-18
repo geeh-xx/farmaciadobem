@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     @item = @carrinho.items.build(:medicamento => medicamento)
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item.carrinho, notice: 'Medicamento solicitado com sucesso.' }
+        format.html { redirect_to @item.carrinho, notice: 'Medicamento incluido no carrinho.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }

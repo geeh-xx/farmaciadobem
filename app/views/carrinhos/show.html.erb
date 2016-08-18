@@ -1,9 +1,35 @@
+<h2>Carrinho de compras</h2>
 
-<p>
-<span> Solicitações</span><br />
-<% @carrinho.items.each do |item| %>
-  <%= item.medicamento.nome %><br/>
-<% end %>
-</p>
+<table>
+  <thead>
+  <tr>
+    <th>Medicamento</th>
+    <th>Validade</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
-<%= link_to 'Back', carrinhos_path %>
+  <tbody>
+  <% @carrinho.items.each do |item| %>
+      <thead>
+        <tr>
+          <td><%= item.medicamento.nome %></td>
+          <td><%= item.medicamento.validade %></td>
+          <td><%= link_to 'Ver', item.medicamento %></td>
+        </tr>
+      </thead>
+  <% end %>
+        <tr>
+          <td><td><%= button_to 'Solicitar', carrinhos_path, class: "btn waves-effect waves-light" %></td></td>
+          <td><%= button_to 'Limpar carrinho', @cart, method: :delete,data: {confirm: 'Deseja realmente limpar seu carrinho??'},
+                            class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %></td>
+        </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+

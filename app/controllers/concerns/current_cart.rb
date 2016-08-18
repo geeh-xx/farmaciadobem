@@ -5,7 +5,7 @@ module CurrentCart
   def set_cart
     Carrinho.find(session[:carrinho_id])
   rescue ActiveRecord::RecordNotFound
-    carrinho = Carrinho.create(:user_id => current_user.id)
+    carrinho = Carrinho.create(user_id: current_user.id)
     session[:carrinho_id] = carrinho.id
     carrinho
   end

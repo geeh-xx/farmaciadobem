@@ -1,6 +1,7 @@
 class CarrinhosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_carrinho, only: [:show, :edit, :update, :destroy]
+  include CurrentCart
+  before_action :set_carrinho, only: [:show,:edit, :update, :destroy]
 
 
   # GET /carrinhos
@@ -12,6 +13,17 @@ class CarrinhosController < ApplicationController
   # GET /carrinhos/1
   # GET /carrinhos/1.json
   def show
+    begin
+      @carrinho = Carrinho.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Esta tentando acessar um carrinho invalido #{params[:id]}"
+      redirect_to home_index_path, notice: "Carrinho invalido"
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render :show, status: :created, location: @carrinho }
+      end
+    end
   end
 
   # GET /carrinhos/new
@@ -26,16 +38,10 @@ class CarrinhosController < ApplicationController
   # POST /carrinhos
   # POST /carrinhos.json
   def create
-    @carrinho = Carrinho.new(carrinho_params)
-
+    session[:carrinho_id] = nil
     respond_to do |format|
-      if @carrinho.save
-        format.html { redirect_to @carrinho, notice: 'Carrinho was successfully created.' }
-        format.json { render :show, status: :created, location: @carrinho }
-      else
-        format.html { render :new }
-        format.json { render json: @carrinho.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to home_index_path, notice: 'Pedido realizado com sucesso.' }
+      format.json { render :show, status: :created, location: home_index_path }
     end
   end
 
@@ -56,10 +62,12 @@ class CarrinhosController < ApplicationController
   # DELETE /carrinhos/1
   # DELETE /carrinhos/1.json
   def destroy
+    @carrinho = set_cart
     @carrinho.destroy
+    session[:carrinho_id] = nil
     respond_to do |format|
-      format.html { redirect_to carrinhos_url, notice: 'Carrinho was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to home_index_path, notice: 'Cesta esvaziada com sucesso.' }
+      format.json { head :ok }
     end
   end
 

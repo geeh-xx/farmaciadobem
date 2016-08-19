@@ -12,7 +12,21 @@ class DoacaosController < ApplicationController
   # GET /doacaos/1
   # GET /doacaos/1.json
   def show
-    @medicamentos = @doacao.medicamentos
+    begin
+      @doacao = Doacao.find(params[:id])
+      if @doacao.user.id == current_user.id
+        @medicamentos = @doacao.medicamentos
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render :show, status: :created, location: @endereco }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to home_index_path}
+          format.json { render :show, status: :created, location: home_index_path }
+        end
+      end
+    end
   end
 
   # GET /doacaos/new

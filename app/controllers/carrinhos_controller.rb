@@ -19,9 +19,16 @@ class CarrinhosController < ApplicationController
       logger.error "Esta tentando acessar um carrinho invalido #{params[:id]}"
       redirect_to home_index_path, notice: "Carrinho invalido"
     else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render :show, status: :created, location: @carrinho }
+      if @carrinho.user.id == current_user.id
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render :show, status: :created, location: @carrinho }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to home_index_path}
+          format.json { render :show, status: :created, location: home_index_path }
+        end
       end
     end
   end

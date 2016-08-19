@@ -4,16 +4,27 @@ class PerfisController < ApplicationController
 
   def edit
     @perfil = Perfil.find params[:id]
-    @enderecos = @user.enderecos.all.reverse_order
+
+    if @perfil.user.id == current_user.id
+      @enderecos = @user.enderecos.all.reverse_order
+    else
+      respond_to do |format|
+        format.html { redirect_to home_index_path}
+        format.json { render :show, status: :created, location: home_index_path }
+      end
+    end
+
   end
 
   def update
     @perfil = Perfil.find params[:id]
+
     if @perfil.update_attributes(perfil_params)
       render 'edit'
     else
       render 'edit'
     end
+
   end
 
   def new

@@ -1,8 +1,9 @@
-
 <p>
   <strong>Tipo:</strong>
   <%= @doacao.tipo %>
 </p>
+
+<% if @doacao.tipo.first == "M" %>
 
 <p>
   <strong>Local da Doação:</strong>
@@ -18,6 +19,9 @@
   <strong>Horario da Doação:</strong>
   <%= @doacao.horario_doacao %>
 </p>
+
+<% end %>
+
 <br />
 <h3>Medicamentos Doados</h3>
 <% @medicamentos.each do |medicamento| %>

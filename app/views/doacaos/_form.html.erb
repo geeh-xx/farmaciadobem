@@ -26,6 +26,7 @@
           <div class="input-field col s12">
             <%= f.label :"Endereço da coleta" %><br /><br />
             <%= f.select :local_doacao, @enderecos.map{ |e| [e.nome, e.nome]},{include_blank: 'Escolha um endereço'} %>
+            <%= link_to 'Adicionar um novo endereço',new_endereco_path %>
           </div>
         </div>
         <div class="row" id="horio_doacao">

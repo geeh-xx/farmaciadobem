@@ -1,0 +1,12 @@
+<p>
+  <strong>Medicamento:</strong>
+  <%= @medicamento.nome %>
+</p>
+
+<p>
+  <strong>Validade:</strong>
+  <%= @medicamento.validade %>
+</p>
+<%= image_tag(("medicamento.png"), class: "responsive-img") %><br/>
+
+<%= link_to 'Voltar', home_index_path %>

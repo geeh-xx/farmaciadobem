@@ -11,6 +11,20 @@ class EnderecosController < ApplicationController
   # GET /enderecos/1
   # GET /enderecos/1.json
   def show
+    begin
+      @endereco = Endereco.find(params[:id])
+      if @endereco.user_id == current_user.id
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render :show, status: :created, location: @endereco }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to home_index_path}
+          format.json { render :show, status: :created, location: home_index_path }
+        end
+      end
+    end
   end
 
   # GET /enderecos/new

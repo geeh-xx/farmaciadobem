@@ -18,7 +18,7 @@
           <div class="input-field col s12">
             <%= f.label :"Como deseja doar?" %><br /><br />
             <%= f.select(:tipo ,[["Levar ao ponto de coleta"],
-                                 ["Motoqueiro busque para mim"]],
+                                 ["Gostaria que um motoboy buscasse meu medicamento"]],
                          {include_blank: 'Escolha'}, id: "localdoacao") %>
           </div>
         </div>
@@ -84,7 +84,7 @@
     $("#local_doacao").css("display", "none");
 
     $("#localdoacao").on('change', function(e){
-      if ($(this).val() == "Motoqueiro busque para mim") {
+      if ($(this).val() == "Gostaria que um motoboy buscasse meu medicamento") {
         $("#horio_doacao").css("display", "block");
         $("#local_doacao").css("display", "block");
 

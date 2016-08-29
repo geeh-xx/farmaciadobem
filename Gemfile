@@ -20,6 +20,8 @@ gem 'ransack'
 
 gem 'cocoon'
 
+gem 'pundit'
+
 gem 'maskedinput-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

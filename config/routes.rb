@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'control_users/index'
+
   resources :items
   resources :carrinhos
   resources :doacaos

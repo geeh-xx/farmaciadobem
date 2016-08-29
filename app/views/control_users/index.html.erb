@@ -1,0 +1,24 @@
+
+<h1>Usuarios Cadastrados</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>email</th>
+    <th>teste</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <thead>
+      <tr>
+        <td><%= user.email %></td>
+      </tr>
+      </thead>
+  <% end %>
+
+
+  </tbody>
+</table>

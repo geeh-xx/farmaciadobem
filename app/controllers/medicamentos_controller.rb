@@ -56,8 +56,13 @@ class MedicamentosController < ApplicationController
   end
 
   private
-  def medicamento_params
-    params.require(:medicamento).permit :nome, :tipo, :validade, :doacao_id
-  end
+
+    def medicamento_params
+      params.require(:medicamento).permit :nome, :tipo, :validade, :doacao_id
+    end
+
+    def carrega_usuario
+      @user = User.find(current_user.id)
+    end
 
 end

@@ -6,6 +6,7 @@
     <th>Codigo</th>
     <th>Data Solicitação</th>
     <th>Qtd Medicamentos</th>
+    <th>Usuario</th>
     <th>Status</th>
     <th colspan="3"></th>
   </tr>
@@ -22,8 +23,12 @@
             <td>Erro ao recuperar data</td>
         <% end %>
         <td><%= carrinho.items.size %></td>
-        <td><%= carrinho.retorna_status %></td>
-        <td><%= link_to 'Editar', edit_carrinho_path(carrinho.id) %></td>
+        <% if !carrinho.user.perfil.blank? || !carrinho.user.perfil.nil? %>
+            <td><%= link_to carrinho.user.email, perfi_url(carrinho.user.perfil.id) %></td>
+        <% else %>
+            <td><%= carrinho.user.email %></td>
+        <% end %>
+        <td><%= link_to carrinho.retorna_status, edit_carrinho_path(carrinho.id) %></td>
       </tr>
       </thead>
   <% end %>

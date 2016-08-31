@@ -17,8 +17,8 @@
     <th>Codigo</th>
     <th>Medicamento</th>
     <th>validade</th>
-    <th>Status</th>
     <th>Foto</th>
+    <th>Status</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -30,9 +30,8 @@
           <td><%=  link_to medicamento.id, medicamento_url(medicamento.id) %></td>
           <td><%=  link_to medicamento.nome, medicamento_url(medicamento.id) %></td>
           <td><%= medicamento.validade %></td>
-          <td><%= medicamento.retorna_status %></td>
           <td><%= image_tag medicamento.avatar.url(:medium) %></td>
-          <td><%= link_to 'Editar', edit_medicamento_path(medicamento) %></td>
+          <td><%= link_to medicamento.retorna_status, edit_medicamento_path(medicamento) %></td>
           <!--<td><%= link_to 'Destroy', medicamento, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
         </tr>
       </thead>

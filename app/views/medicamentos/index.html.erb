@@ -13,30 +13,33 @@
 
 <div class="row">
   <% @medicamentos.each do |medicamento| %>
-    <div class="col l10">
-      <h3><%= medicamento.nome %></h3>
+    <% if medicamento.active == 1 %>
+      <div class="col l10">
+        <h3><%= medicamento.nome %></h3>
 
-      <div class="divider"></div>
-      <div class="row">
-        <div class="col l9">
+        <div class="divider"></div>
+        <div class="row">
+          <div class="col l9">
 
-          <p>
-            Tipo: <%= medicamento.tipo %>
-          </p>
-          <p>
-            Descrição do remedio
-          </p>
-          <p>
-           Validade: <%= medicamento.validade %>
-          </p>
-        <br /><br />
-          <%= button_to 'Solicitar', items_path(:medicamento_id => medicamento), class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %>
+            <p>
+              Tipo: <%= medicamento.tipo %>
+            </p>
+            <p>
+              Descrição do remedio
+            </p>
+            <p>
+             Validade: <%= medicamento.validade %>
+            </p>
+            <br /><br />
+            <%= button_to 'Solicitar', items_path(:medicamento_id => medicamento), class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %>
+            <br/>
+          </div>
+          <div class="col l3">
+            <br />
+            <td><%= image_tag medicamento.avatar.url(:medium) %></td>
+          </div>
         </div>
-        <div class="col l3">
-          <br />
-          <%= image_tag("medicamento.png") %>
-         </div>
       </div>
-    </div>
+    <% end %>
   <% end -%>
 </div>

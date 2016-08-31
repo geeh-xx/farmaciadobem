@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829114047) do
+ActiveRecord::Schema.define(version: 20160831001810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160829114047) do
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.date     "data_criacao"
   end
 
   add_index "doacaos", ["user_id"], name: "index_doacaos_on_user_id", using: :btree
@@ -75,9 +76,14 @@ ActiveRecord::Schema.define(version: 20160829114047) do
     t.string   "nome"
     t.string   "tipo"
     t.string   "validade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "doacao_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "active",              default: 0
   end
 
   add_index "medicamentos", ["doacao_id"], name: "index_medicamentos_on_doacao_id", using: :btree

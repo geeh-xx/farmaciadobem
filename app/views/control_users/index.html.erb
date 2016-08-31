@@ -1,11 +1,11 @@
-
 <h1>Usuarios Cadastrados</h1>
-
+<br />
 <table>
   <thead>
   <tr>
-    <th>email</th>
-    <th>teste</th>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>Telefone</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -15,6 +15,10 @@
       <thead>
       <tr>
         <td><%= user.email %></td>
+        <% if !user.perfil.nil? %>
+            <td><%= user.perfil.nome %></td>
+            <td><%= user.perfil.telefone %></td>
+        <% end %>
       </tr>
       </thead>
   <% end %>

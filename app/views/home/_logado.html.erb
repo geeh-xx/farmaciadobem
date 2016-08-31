@@ -1,10 +1,24 @@
 <ul id="nav-mobile" class="right hide-on-med-and-down">
-  <% if !current_user.perfil.nil? %>
-      <li>Bem vindo: <bold><%= current_user.perfil.nome %></bold></li>
+
+  <% if User.find(current_user).admin? %>
+      <li><%= link_to 'Home', home_index_path %></li>
+      <li><%= link_to 'Medicamentos', control_medicamentos_index_path %></li>
+      <li><%= link_to 'Usuarios', control_users_index_path %></li>
+      <li><%= link_to 'Doacoes', control_doacaos_index_path %></li>
+      <li><%= link_to 'Solicitacoes', home_index_path %></li>
+      <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+
+      <% if !current_user.perfil.nil? %>
+          <li>Bem vindo: <bold><%= current_user.perfil.nome %></bold></li>
+      <% end %>
+      <li><%= link_to 'Home', home_index_path %></li>
+      <li><%= link_to 'Doar Medicamentos', new_doacao_path %></li>
+      <li><%= link_to 'Medicamentos Disponiveis', medicamentos_path %></li>
+      <li><%= link_to 'Dicas de Saude', home_index_path %></li>
+      <li><a class="dropdown-button" href="#!" data-activates="drop_usuario">Perfil<i class="material-icons right">arrow_drop_down</i></a></li>
+
   <% end %>
-  <li><%= link_to 'Home', home_index_path %></li>
-  <li><%= link_to 'Doar Medicamentos', new_doacao_path %></li>
-  <li><%= link_to 'Medicamentos Disponiveis', medicamentos_path %></li>
-  <li><%= link_to 'Dicas de Saude', home_index_path %></li>
-  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right">arrow_drop_down</i></a></li>
+
+
 </ul>

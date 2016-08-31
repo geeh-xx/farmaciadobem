@@ -7,6 +7,6 @@
   <strong>Validade:</strong>
   <%= @medicamento.validade %>
 </p>
-<%= image_tag(("medicamento.png"), class: "responsive-img") %><br/>
+<%= image_tag @medicamento.avatar.url(:medium) %><br/>
 
 <%= link_to 'Voltar', home_index_path %>

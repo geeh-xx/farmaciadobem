@@ -14,7 +14,7 @@ class DoacaosController < ApplicationController
   def show
     begin
       @doacao = Doacao.find(params[:id])
-      if @doacao.user.id == current_user.id
+      if @doacao.user.id == current_user.id || @user.admin?
         @medicamentos = @doacao.medicamentos
         respond_to do |format|
           format.html # show.html.erb
@@ -45,7 +45,7 @@ class DoacaosController < ApplicationController
   def create
     @depoimentos = Depoimento.all
     @doacao = Doacao.new(doacao_params)
-
+    @doacao.data_criacao = DateTime.now
     respond_to do |format|
       if @doacao.save
         format.html { redirect_to @doacao, notice: 'Doacão Feit com sucesso.' }
@@ -89,7 +89,7 @@ class DoacaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doacao_params
-      params.require(:doacao).permit(:tipo, :local_doacao, :data_doacao, :horario_doacao, :user_id,
+      params.require(:doacao).permit(:tipo, :local_doacao, :data_doacao, :horario_doacao, :user_id,:data_criacao,
                                      :medicamentos_attributes => [:id, :nome, :tipo, :validade, :doacao_id])
     end
 

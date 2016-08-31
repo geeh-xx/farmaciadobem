@@ -14,7 +14,4 @@ class ApplicationController < ActionController::Base
       redirect_to (request.referrer || root_path)
     end
 
-    def endereco_params
-      params.require(:endereco).permit(:nome, :rua, :numero, :bairro, :cidade, :estado, :cep, :user_id)
-    end
 end

@@ -47,9 +47,11 @@
   <div class="row  center-align" >
     <% @medicamentos.each do |medicamento| %>
       <div class="col s3">
-        <%= image_tag(("medicamento.png"), class: "responsive-img") %><br/>
-        <%= medicamento.nome %> <br />
-        <%= button_to 'Solicitar', items_path(:medicamento_id => medicamento), class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %>
+        <% if medicamento.active == 1 %>
+          <%= image_tag medicamento.avatar.url(:medium), class: "responsive-img" %><br />
+          <%= medicamento.nome %> <br />
+          <%= button_to 'Solicitar', items_path(:medicamento_id => medicamento), class: "btn btn-flat red darken-2 waves-effect waves-light white-text" %>
+        <% end %>
       </div>
     <% end -%>
   </div>

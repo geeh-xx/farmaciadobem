@@ -6,6 +6,7 @@
   <tr>
     <th>Data</th>
     <th>Qtd Medicamentos</th>
+    <th>Status</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -20,6 +21,7 @@
           <td>Erro ao recuperar data</td>
         <% end %>
         <td><%= carrinho.items.size %></td>
+        <td><%= carrinho.retorna_status %></td>
         <td><%= link_to 'Ver', carrinho %></td>
       </tr>
       </thead>

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91187db9-0aa8-4dba-92c5-f151381076ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/control_carrinhos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/control_carrinhos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/control_medicamentos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/control_medicamentos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/perfis/show.html.erb" afterPath="$PROJECT_DIR$/app/views/perfis/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carrinhos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/carrinhos/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" />
     </list>
     <ignored path="farmaciadobem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +51,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/perfis/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
               <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/carrinhos/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/carrinhos/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/medicamentos/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -79,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/depoimentos/show.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/doacaos/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_deslogado.html.erb" />
@@ -110,7 +138,6 @@
         <option value="$PROJECT_DIR$/app/views/control_doacaos/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/control_users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/doacaos/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/perfis/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_logado.html.erb" />
         <option value="$PROJECT_DIR$/app/views/carrinhos/edit.html.erb" />
@@ -118,7 +145,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20160831191538_add_active_to_carrinhos.rb" />
         <option value="$PROJECT_DIR$/app/models/medicamento.rb" />
         <option value="$PROJECT_DIR$/app/models/carrinho.rb" />
-        <option value="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/control_users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/control_medicamentos_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/control_doacaos_controller.rb" />
@@ -130,6 +156,9 @@
         <option value="$PROJECT_DIR$/app/views/control_medicamentos/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/control_carrinhos/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/perfis/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/carrinhos/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" />
       </list>
     </option>
   </component>
@@ -849,12 +878,12 @@
       <workItem from="1472515705556" duration="4040000" />
       <workItem from="1472566437065" duration="7432000" />
       <workItem from="1472594472430" duration="8164000" />
-      <workItem from="1472650732943" duration="10994000" />
+      <workItem from="1472650732943" duration="11605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217622000" />
+    <option name="totallyTimeSpent" value="218233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1039,14 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/medicamentos/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/perfis/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1067,14 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="43" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/carrinhos/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1199,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/carrinhos/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/policies/carrinho_policy.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1307,6 +1312,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/carrinhos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/carrinhos/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/medicamentos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>

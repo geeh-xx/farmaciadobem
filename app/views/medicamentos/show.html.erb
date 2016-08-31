@@ -12,5 +12,8 @@
 <%= link_to 'Voltar', home_index_path %><br>
 
 <% if User.find(current_user).admin? %>
+    <br />
+    <strong>Status:</strong>
+    <%= @medicamento.retorna_status %><br>
     <%= link_to 'Editar', edit_medicamento_path(@medicamento) %>
 <% end %>

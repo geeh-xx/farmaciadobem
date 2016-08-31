@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91187db9-0aa8-4dba-92c5-f151381076ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/policies/carrinho_policy.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/policies/doacao_policy.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/perfis/show.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20160830230636_add_data_to_solicitacaos.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20160831001257_remove_date_to_solicitacaos.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/carrinhos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/carrinhos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/control_doacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/control_doacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/control_medicamentos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/control_medicamentos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/control_users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/control_users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/doacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/doacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/enderecos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/enderecos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/perfis_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/perfis_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/carrinho.rb" afterPath="$PROJECT_DIR$/app/models/carrinho.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/medicamento.rb" afterPath="$PROJECT_DIR$/app/models/medicamento.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carrinhos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/carrinhos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carrinhos/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/carrinhos/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/carrinhos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/control_doacaos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/control_doacaos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/control_medicamentos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/control_medicamentos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/control_users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/control_users/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/doacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_logado.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_logado.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/medicamentos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/medicamentos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/medicamentos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/perfis/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/perfis/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="farmaciadobem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,6 +46,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="43">
               <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20160831001810_add_date_to_doacaos.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20160831001810_add_date_to_doacaos.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -871,12 +858,12 @@
       <workItem from="1472515705556" duration="4040000" />
       <workItem from="1472566437065" duration="7432000" />
       <workItem from="1472594472430" duration="8164000" />
-      <workItem from="1472650732943" duration="9567000" />
+      <workItem from="1472650732943" duration="9772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216195000" />
+    <option name="totallyTimeSpent" value="216400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1149,14 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160830230636_add_data_to_solicitacaos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/medicamentos/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1181,14 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160831001257_remove_date_to_solicitacaos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160831191538_add_active_to_carrinhos.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1201,14 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="62" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160831001810_add_date_to_doacaos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1321,6 +1284,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="43">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20160831001810_add_date_to_doacaos.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20160830230636_add_data_to_solicitacaos.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20160831001257_remove_date_to_solicitacaos.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
           <folding />
         </state>
       </provider>

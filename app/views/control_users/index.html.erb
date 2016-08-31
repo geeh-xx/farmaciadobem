@@ -3,6 +3,7 @@
 <table>
   <thead>
   <tr>
+    <th>Codigo</th>
     <th>Email</th>
     <th>Nome</th>
     <th>Telefone</th>
@@ -14,6 +15,7 @@
   <% @users.each do |user| %>
       <thead>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.email %></td>
         <% if !user.perfil.nil? %>
             <td><%= user.perfil.nome %></td>

@@ -9,4 +9,8 @@
 </p>
 <%= image_tag @medicamento.avatar.url(:medium) %><br/>
 
-<%= link_to 'Voltar', home_index_path %>
+<%= link_to 'Voltar', home_index_path %><br>
+
+<% if User.find(current_user).admin? %>
+    <%= link_to 'Editar', edit_medicamento_path(@medicamento) %>
+<% end %>

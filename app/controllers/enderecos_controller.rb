@@ -1,4 +1,5 @@
 class EnderecosController < ApplicationController
+  before_action :carrega_usuario
   before_action :set_endereco, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -13,7 +14,7 @@ class EnderecosController < ApplicationController
   def show
     begin
       @endereco = Endereco.find(params[:id])
-      if @endereco.user_id == current_user.id
+      if @endereco.user_id == current_user.id || @user.admin?
         respond_to do |format|
           format.html # show.html.erb
           format.json { render :show, status: :created, location: @endereco }
@@ -80,6 +81,10 @@ class EnderecosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_endereco
       @endereco = Endereco.find(params[:id])
+    end
+
+    def carrega_usuario
+      @user = User.find(current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -5,6 +5,8 @@
   <tr>
     <th>Medicamento</th>
     <th>Validade</th>
+    <th></th>
+    <th>Status</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -16,9 +18,10 @@
           <td><%= item.medicamento.nome %></td>
           <td><%= item.medicamento.validade %></td>
           <td><%= link_to 'Ver', item.medicamento %></td>
-        </tr>
-      </thead>
   <% end %>
+          <td><%= @carrinho.retorna_status %></td>
+        </tr>
+        </thead>
         <tr>
           <td><td><%= button_to 'Solicitar', carrinhos_path, class: "btn waves-effect waves-light" %></td></td>
           <td><%= button_to 'Limpar carrinho', @cart, method: :delete,data: {confirm: 'Deseja realmente limpar seu carrinho??'},

@@ -1,0 +1,33 @@
+<h1>Solicitações</h1>
+<br />
+<table>
+  <thead>
+  <tr>
+    <th>Codigo</th>
+    <th>Data Solicitação</th>
+    <th>Qtd Medicamentos</th>
+    <th>Status</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @carrinhos.each do |carrinho| %>
+      <thead>
+      <tr>
+        <td><%= link_to carrinho.id, carrinho_path(carrinho.id) %></td>
+        <% if !carrinho.data.blank? || !carrinho.data.nil? %>
+            <td><%= carrinho.data.strftime("%d/%m/%Y") %></td>
+        <% else %>
+            <td>Erro ao recuperar data</td>
+        <% end %>
+        <td><%= carrinho.items.size %></td>
+        <td><%= carrinho.retorna_status %></td>
+        <td><%= link_to 'Editar', edit_carrinho_path(carrinho.id) %></td>
+      </tr>
+      </thead>
+  <% end %>
+
+
+  </tbody>
+</table>

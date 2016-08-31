@@ -19,7 +19,7 @@ class CarrinhosController < ApplicationController
       logger.error "Esta tentando acessar um carrinho invalido #{params[:id]}"
       redirect_to home_index_path, notice: "Carrinho invalido"
     else
-      if @carrinho.user.id == current_user.id
+      if @carrinho.user.id == current_user.id || @user.admin?
         respond_to do |format|
           format.html # show.html.erb
           format.json { render :show, status: :created, location: @carrinho }
@@ -40,6 +40,7 @@ class CarrinhosController < ApplicationController
 
   # GET /carrinhos/1/edit
   def edit
+    authorize @carrinho
   end
 
   # POST /carrinhos
@@ -86,7 +87,7 @@ class CarrinhosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carrinho_params
-      params.require(:carrinho).permit(:data,:user_id)
+      params.require(:carrinho).permit(:data, :user_id, :active)
     end
 
     def carrega_usuario

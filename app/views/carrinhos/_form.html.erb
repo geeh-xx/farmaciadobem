@@ -11,8 +11,23 @@
     </div>
   <% end %>
 
+    <p>
+      <%= f.label :"ID: " %> <%=  @carrinho.id %>
+    </p>
+    <br />
+    <p>
+      <%= f.label :"Status" %><br><br>
+      <%= f.select(:active ,[["Solicitado","0"],
+                             ["Entregue","1"]],
+                   {include_blank: 'Escolha'}, class:"browser-default") %>
+    </p>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <p>
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        <%= f.submit :"Salvar"%>
+      </button>
+    </p>
+    <br />
+
 <% end %>

@@ -1,5 +1,5 @@
 class Medicamento < ActiveRecord::Base
-  enum role: [:desativo, :ativo]
+  enum role: [:solicitado, :entregue]
   belongs_to :doacao
   has_many :items, dependent: :destroy
 

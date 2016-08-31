@@ -1,0 +1,43 @@
+<h1>Perfil</h1>
+<br/>
+<div class="row">
+  <div class="col l9">
+
+    <% if !@perfil.nil? || !@perfil.blank? %>
+
+        <p>
+          <strong>Nome:</strong>
+          <%= @perfil.nome %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <% if !@perfil.email.nil? || !@perfil.email.blank? %>
+            <%= @perfil.email %>
+          <% else %>
+            <%= @perfil.user.email %>
+          <% end %>
+        </p>
+
+        <p>
+          <strong>Nome:</strong>
+          <%= @perfil.telefone %>
+        </p>
+
+    <% else %>
+        <label>Perfil não cadastrado </label>
+    <% end %>
+
+    <br />
+    <h3>Endereços</h3>
+    <% if @enderecos.blank? %>
+        <label>Nenhum endereço cadastrado </label>
+    <% else %>
+        <% @enderecos.each do |endereco| %>
+            <div class="collection">
+              <%= link_to endereco.nome, endereco, class: "collection-item" %>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

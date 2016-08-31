@@ -5,6 +5,7 @@
 
 <% if @doacao.tipo.first == "M" %>
 
+
 <p>
   <strong>Local da Doação:</strong>
   <%= @doacao.local_doacao %>
@@ -27,6 +28,7 @@
 <% @medicamentos.each do |medicamento| %>
     <ul class="collection">
       <li class="collection-item">
+        <b>Codigo</b>: <%= link_to medicamento.id, medicamento_url(medicamento.id) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b>Medicamento</b>: <%= medicamento.nome %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b>Tipo</b>: <%= medicamento.tipo %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b>Validade</b>: <%= medicamento.validade %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

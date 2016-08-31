@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'control_carrinhos/index'
+
   get 'control_doacaos/index'
 
   get 'control_medicamentos/index'

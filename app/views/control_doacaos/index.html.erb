@@ -3,6 +3,7 @@
 <table>
   <thead>
   <tr>
+    <th>Codigo</th>
     <th>Data da Doação</th>
     <th>Data Coleta</th>
     <th>Local</th>
@@ -15,6 +16,7 @@
   <% @doacoes.each do |doacao| %>
       <thead>
       <tr>
+        <td><%= link_to doacao.id, doacao_url(doacao.id) %></td>
         <% if !doacao.data_criacao.blank? || !doacao.data_criacao.nil? %>
             <td><%= doacao.data_criacao.strftime("%d/%m/%Y") %></td>
         <% else %>
@@ -22,8 +24,11 @@
         <% end %>
         <td><%= doacao.data_doacao %></td>
         <td><%= doacao.local_doacao %></td>
-        <td><%= doacao.user.email %></td>
-        <td><%= link_to 'Ver', doacao %></td>
+        <% if !doacao.user.perfil.blank? || !doacao.user.perfil.nil? %>
+          <td><%= link_to doacao.user.email, perfi_url(doacao.user.perfil.id) %></td>
+        <% else %>
+          <td><%= doacao.user.email %></td>
+        <% end %>
       </tr>
       </thead>
   <% end %>

@@ -14,7 +14,7 @@ class DoacaosController < ApplicationController
   def show
     begin
       @doacao = Doacao.find(params[:id])
-      if @doacao.user.id == current_user.id || @user.admin?
+      if @doacao.user.id == current_user.id || @user.admin? 
         @medicamentos = @doacao.medicamentos
         respond_to do |format|
           format.html # show.html.erb

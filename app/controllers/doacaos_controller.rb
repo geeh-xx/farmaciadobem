@@ -7,6 +7,7 @@ class DoacaosController < ApplicationController
   # GET /doacaos.json
   def index
     @doacaos = @user.doacaos.all.reverse_order
+    @doacao = @user.doacaos.last
   end
 
   # GET /doacaos/1
@@ -45,10 +46,9 @@ class DoacaosController < ApplicationController
   def create
     @depoimentos = Depoimento.all
     @doacao = Doacao.new(doacao_params)
-    @doacao.data_criacao = DateTime.now
     respond_to do |format|
       if @doacao.save
-        format.html { redirect_to @doacao, notice: 'Doacão Feit com sucesso.' }
+        format.html { redirect_to @doacao, notice: 'Doacão Feita com sucesso.' }
         format.json { render :show, status: :created, location: @doacao }
       else
         format.html { render :new }
@@ -89,7 +89,7 @@ class DoacaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doacao_params
-      params.require(:doacao).permit(:tipo, :local_doacao, :data_doacao, :horario_doacao, :user_id,:data_criacao,
+      params.require(:doacao).permit(:tipo, :local_doacao, :data_doacao, :horario_doacao, :user_id,
                                      :medicamentos_attributes => [:id, :nome, :tipo, :validade, :doacao_id])
     end
 

@@ -1,4 +1,4 @@
-<%= form_for @medicamento, url: medicamento_path, html: { multipart: true }  do |f| %>
+<%= form_for @medicamento, html: { multipart: true }  do |f| %>
   <% if @medicamento.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@medicamento.errors.count, "error") %> Para salver esse depoimento:</h2>
